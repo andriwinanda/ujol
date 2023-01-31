@@ -56,9 +56,15 @@ export default {
       regex :/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
     };
   },
+  // mounted() {
+  //   this.axios.get('/api/material')
+  //   .then(response => {
+  //     console.log(response)
+  //   })
+  // },
   methods: {
     login() {
-      if ( this.regex.test(this.username)  && this.password) {
+      if ( this.password) {
         this.isLoading = true;
         let userLogin = {
           username: this.username,

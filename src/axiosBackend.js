@@ -5,13 +5,15 @@ import swal from 'sweetalert';
 import { getToken, getBaseUrl } from './localstorage-helper'
 
 let myAxios = axios.create();
-let url = 'https://area31.herokuapp.com'
+// let url = 'https://area31.herokuapp.com'
+let url = 'https://spring-mongo-production.up.railway.app'
+// let url = 'http://localhost:8088'
 let token = getToken()
 
 if (token) {
-  //  myAxios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-  // axios.defaults.params = {}
-  // axios.defaults.params['access_token'] = token
+   myAxios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  axios.defaults.params = {}
+  axios.defaults.params['access_token'] = token
 }
 if (url) {
   myAxios.defaults.baseURL = url
